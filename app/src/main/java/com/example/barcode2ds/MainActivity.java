@@ -1,37 +1,18 @@
 package com.example.barcode2ds;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.hardware.Camera;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Process;
-
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.DebugUtils;
+import android.os.Process;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rscja.barcode.BarcodeDecoder;
 import com.rscja.barcode.BarcodeFactory;
-import com.rscja.barcode.BarcodeUtility;
 import com.rscja.deviceapi.entity.BarcodeEntity;
- 
-
 
 public class MainActivity extends Activity implements View.OnClickListener {
         Button btnScan;
@@ -65,7 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-               case  R.id.btnScan:
+                case  R.id.btnScan:
                    start();
                 break;
                 case  R.id.btnStop:

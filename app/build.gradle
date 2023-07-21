@@ -1,27 +1,26 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.1"
+    compileSdkVersion 34
     ndkVersion '21.3.6528147'
     defaultConfig {
         applicationId "com.example.barcode2ds"
-        minSdkVersion 18
-        targetSdkVersion 29
+        minSdkVersion 29
+        targetSdkVersion 34
         versionCode 1
         versionName "1.3"
     }
 
     signingConfigs {
         debug {
-            File strFile = new File("/release.jks")
+            File strFile = new File("release.jks")
             storeFile file(strFile)
             storePassword "123456"
             keyPassword "123456"
             keyAlias "key0"
         }
         release {
-            File strFile = new File("/release.jks")
+            File strFile = new File("release.jks")
             storeFile file(strFile)
             storePassword "123456"
             keyPassword "123456"
@@ -43,10 +42,11 @@ android {
             }
         }
     }
+    namespace 'com.example.barcode2ds'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
